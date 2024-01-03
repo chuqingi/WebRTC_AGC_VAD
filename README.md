@@ -1,6 +1,5 @@
 # WebRTC_AGC_VAD
 C implementation of WebRTC_AGC_VAD
-![Alt text](result.png)
 
 ## Table of contents
 1. [Development environments](#dev_env)
