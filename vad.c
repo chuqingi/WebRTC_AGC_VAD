@@ -140,8 +140,8 @@ void WebRtcAgc_ProcessVad(AgcVad* state, const int16_t* in, size_t nrSamples) {
     }
     // high pass filter and compute energy
     for (k = 0; k < 4; k++) {
+      // out[k] = 600 >> 10 * out[k-1] + buf2[k] - buf2[k-1]
       out = buf2[k] + HPstate;
-      // 600? debug?
       tmp32 = 600 * out;
       HPstate = (int16_t)((tmp32 >> 10) - buf2[k]);
       // Add 'out * out / 2**6' to 'nrg' in a non-overflowing
